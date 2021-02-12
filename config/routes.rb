@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :teacherss do
     resources :schedules
   end
-  resources :patients
+  resources :students
   root 'home#index'
 end

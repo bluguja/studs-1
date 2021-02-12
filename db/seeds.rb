@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+User.create(first_name: "John", last_name: "Player",type: "Teacher" ,email: "teacher@gmail.com", password: "111111")
+User.create(first_name: "John1", last_name: "Player",type: "Teacher" ,email: "teacher1@gmail.com", password: "111111")
+User.create(first_name: "John2", last_name: "Player",type: "Teacher" ,email: "teacher2@gmail.com", password: "111111")
+
+
+User.create(first_name: "kola", last_name: "Player",type: "Student" ,email: "student@gmail.com", password: "111111")
+User.create(first_name: "kola1", last_name: "Player",type: "Student" ,email: "student1@gmail.com", password: "111111")
+User.create(first_name: "kola2", last_name: "Player",type: "Student" ,email: "student2@gmail.com", password: "111111")
+
+peacher = Teacher.find_by(email: "teacher@gmail.com")
+peacher1 = Teacher.find_by(email: "teacher1@gmail.com")
+
+student = Student.find_by(email: "student@gmail.com")
+student1 = Student.find_by(email: "student1@gmail.com")
+
+student.schedules.find_or_create_by(teacher_id: peacher.id, schedule_date: Time.zone.now)
+student.schedules.find_or_create_by(teacher_id: peacher.id, schedule_date: Time.zone.now+24000)
+student.schedules.find_or_create_by(teacher_id: peacher1.id, schedule_date: Time.zone.now+24400)
