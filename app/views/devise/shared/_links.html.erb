@@ -18,8 +18,9 @@
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end %>
 
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
-  <% end %>
-<% end %>
+<div class="row ml-1">
+  <%= link_to 'Sign in with Google', user_google_oauth2_omniauth_authorize_path, class: "social google_oauth2" %> &nbsp
+  <%= link_to 'Sign in with Twitter', user_twitter_omniauth_authorize_path, class: "twitter social" %>&nbsp
+  <%= link_to 'Sign in with GitHub', user_github_omniauth_authorize_path, class: "github social" %>&nbsp
+  <%= link_to 'Sign in with LinkedIn', user_linkedin_omniauth_authorize_path, class: "linkedin social" %>&nbsp
+</div>
