@@ -29,10 +29,10 @@ class OmniauthController < ApplicationController
   def redirect
     if registered_user.present?
       if user_signed_in?
-        if user.patient?
-          appointments_path
+        if user.student?
+          schedules_path
         else
-          patients_path
+          students_path
         end
       else
         sign_in_and_redirect registered_user
