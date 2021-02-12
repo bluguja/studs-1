@@ -10,6 +10,7 @@
   </head>
 
   <body>
+  <%= render 'layouts/navbar', logged: user_signed_in? %>
     <%= yield %>
   </body>
 </html>
