@@ -4,7 +4,7 @@ class User < ApplicationRecord
 #   devise :database_authenticatable, :registerable,
 #          :recoverable, :rememberable, :validatable
 
-class User < ApplicationRecord
+
 
   has_many :providers
   # Include default devise modules. Others available are:
@@ -21,11 +21,11 @@ class User < ApplicationRecord
     "#{first_name&.capitalize} #{last_name&.capitalize}"
   end
 
-  def physician?
+  def teacher?
     type == "Teacher"
   end
 
-  def patient?
+  def student?
     type == "Student"
   end
 
@@ -54,4 +54,4 @@ class User < ApplicationRecord
   end
 end
 
- end
+ 
