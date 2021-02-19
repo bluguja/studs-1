@@ -22,6 +22,7 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = current_user.schedules.new(schedule_params)
+    @teacher = Teacher.find(schedule_params[:teacher_id])
     if @schedule.save
       redirect_to schedules_path, notice: 'Your schedule has been fixed successfully'
     else

@@ -11,6 +11,6 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
-    @schedules = @student.schedules
+    @schedules = @student.schedules.where(teacher_id: current_user.id)
   end
 end

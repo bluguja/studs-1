@@ -5,7 +5,7 @@ class TeachersController < ApplicationController
     if current_user.undefined?
       redirect_to edit_user_registration_path
     else
-      @teacherss = Teacher.all
+      @teachers = Teacher.all
     end
   end
 
